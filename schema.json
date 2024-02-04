@@ -1,0 +1,78 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://docs.budibase.com",
+    "friendlyName": "Amazon QLDB",
+    "type": "Ledger",
+    "description": "Enables read and write access to an Amazon QLDB ledger",
+    "datasource": {
+      "region": {
+        "type": "string",
+        "required": true
+      },
+      "ledger": {
+        "type": "string",
+        "required": true
+      },
+      "table": {
+        "type": "string",
+        "required": true
+      }
+    },
+    "query": {
+      "create": {
+        "type": "json"
+      },
+      "read": {
+        "type": "json"
+      },
+      "update": {
+        "type": "fields",
+        "fields": {
+          "document": {
+            "type": "json",
+            "required": true
+          },
+          "where": {
+            "type": "json",
+            "required": false
+          }
+        }
+      },
+      "upsert": {
+        "type": "fields",
+        "fields": {
+          "document": {
+            "type": "json",
+            "required": true
+          },
+          "where": {
+            "type": "json",
+            "required": false
+          }
+        }
+      },
+      "insertInto": {
+        "type": "fields",
+        "fields": {
+          "field": {
+            "type": "string",
+            "required": true
+          },
+          "document": {
+            "type": "json",
+            "required": true
+          },
+          "where": {
+            "type": "json",
+            "required": false
+          }
+        }
+      },
+      "delete": {
+        "type": "json"
+      }
+    }
+  }
+}
