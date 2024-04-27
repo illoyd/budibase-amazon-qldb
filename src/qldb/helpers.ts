@@ -4,3 +4,7 @@ export const ensureEnvVar = (variableName: string): string => {
         throw Error(`Environment variable "${variableName}" is not defined`);
     return value;
 };
+
+export const asJson = (value:any):object =>{
+    return JSON.parse(JSON.stringify(value))
+}
