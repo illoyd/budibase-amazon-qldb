@@ -119,7 +119,11 @@ class AmazonQldbDatasource implements IntegrationBase {
     );
   }
 
-  protected normalise(value: ion.dom.Value | ion.dom.Value[]): any {
+  protected normalise(value: ion.dom.Value): object;
+  protected normalise(value: ion.dom.Value[]): object[];
+  protected normalise(
+    value: ion.dom.Value | ion.dom.Value[],
+  ): object | object[] {
     return asJson(value);
   }
 }
