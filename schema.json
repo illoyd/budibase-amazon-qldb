@@ -27,6 +27,15 @@
       "read": {
         "type": "json"
       },
+      "readById": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "text",
+            "required": true
+          }
+        }
+      },
       "update": {
         "type": "fields",
         "fields": {
@@ -37,6 +46,19 @@
           "where": {
             "type": "json",
             "required": false
+          }
+        }
+      },
+      "updateById": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "text",
+            "required": true
+          },
+          "document": {
+            "type": "json",
+            "required": true
           }
         }
       },
@@ -70,8 +92,34 @@
           }
         }
       },
+      "insertIntoById": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "text",
+            "required": true
+          },
+          "field": {
+            "type": "string",
+            "required": true
+          },
+          "document": {
+            "type": "json",
+            "required": true
+          }
+        }
+      },
       "delete": {
         "type": "json"
+      },
+      "deleteById": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "text",
+            "required": true
+          }
+        }
       }
     }
   }

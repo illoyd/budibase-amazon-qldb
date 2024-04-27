@@ -14,6 +14,6 @@ budi plugins --build
 ```
 
 You can also re-build everytime you make a change to your plugin with the command:
-```
+```shell
 budi plugins --watch
 ```
