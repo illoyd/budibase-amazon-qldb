@@ -1,6 +1,6 @@
 {
   "name": "budibase-amazon-qldb",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Amazon QLDB Service",
   "main": "src/index.ts",
   "license": "MIT",
