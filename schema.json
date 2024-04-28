@@ -18,7 +18,7 @@
       "idFieldName": {
         "displayName": "ID Field Name",
         "type": "string",
-        "required": true,
+        "required": false,
         "default": "documentId"
       }
     },

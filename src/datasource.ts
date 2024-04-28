@@ -14,6 +14,8 @@ type WithId = { id: string } & Query;
 type WithWhere = { where: Json } & Query;
 type WithField = { field: string } & Query;
 
+const DEFAULT_ID_FIELD_NAME = "documentId";
+
 class AmazonQldbDatasource implements IntegrationBase {
   private readonly region: string;
   private readonly ledger: string;
@@ -27,7 +29,7 @@ class AmazonQldbDatasource implements IntegrationBase {
 
     // Map to hold repositories; we'll use a WeakMap to allow it to purge old repositories when not in use
     this.repositoryOptions = {
-      idFieldName: config.idFieldName,
+      idFieldName: config.idFieldName ?? DEFAULT_ID_FIELD_NAME,
     };
   }
 
