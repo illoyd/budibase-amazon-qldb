@@ -1,3 +1,4 @@
+// @ts-ignore
 import { IntegrationBase } from "@budibase/types";
 import { QldbFactory } from "./qldb/qldb-factory";
 import { QldbRepository } from "./qldb/qldb-repository";
@@ -20,8 +21,7 @@ class AmazonQldbDatasource implements IntegrationBase {
   private readonly region: string;
   private readonly ledger: string;
   private readonly repositoryOptions;
-  private readonly repositories: WeakMap<Symbol, QldbRepository> =
-    new WeakMap();
+  private readonly repositories: Map<string, QldbRepository> = new Map();
 
   constructor(config: { region: string; ledger: string; idFieldName: string }) {
     this.region = config.region;
@@ -142,10 +142,9 @@ class AmazonQldbDatasource implements IntegrationBase {
   }
 
   protected repository(table: string): QldbRepository {
-    const key = Symbol.for(table);
-    if (!this.repositories.has(key))
-      this.repositories.set(key, this.buildRepository(table));
-    return this.repositories.get(key)!;
+    if (!this.repositories.has(table))
+      this.repositories.set(table, this.buildRepository(table));
+    return this.repositories.get(table)!;
   }
 
   protected buildRepository(table: string): QldbRepository {
