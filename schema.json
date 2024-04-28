@@ -16,7 +16,6 @@
         "required": true
       },
       "idFieldName": {
-        "displayName": "ID Field Name",
         "type": "string",
         "required": false,
         "default": "documentId"
@@ -124,7 +123,7 @@
         }
       }
     },
-    "extras": {
+    "extra": {
       "table": {
         "displayName": "Table",
         "type": "string",

@@ -11,7 +11,7 @@
   "dependencies": {
     "@aws-sdk/client-qldb": "^3.477.0",
     "@aws-sdk/client-qldb-session": "^3.477.0",
-    "@budibase/types": "^2.0.13",
+    "@budibase/types": "^2.23.12",
     "amazon-qldb-driver-nodejs": "^3.1.0",
     "ion-js": "latest",
     "lodash": "^4.17.21",
